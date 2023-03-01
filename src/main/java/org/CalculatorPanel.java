@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.math.BigDecimal;
 
 public class CalculatorPanel extends JPanel  {
-   private final JButton display;
+   public final JButton display= new JButton("0");
     private final JPanel panel;
     private String lastCommand;
     private boolean start;
@@ -21,7 +21,7 @@ public class CalculatorPanel extends JPanel  {
         lastCommand = "=";
         start = true;
 
-        display = new JButton("0");
+       // display = new JButton("0");
         display.setEnabled(false);
         display.setFont(display.getFont().deriveFont(50f));
         add(display, BorderLayout.NORTH);
@@ -54,16 +54,7 @@ public class CalculatorPanel extends JPanel  {
         button.addActionListener(listener);
         panel.add(button);
     }
-    private  class CommandActionDel implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String del;
-            del = e.getActionCommand();
-            del= "";
-            display.setText(del);
 
-        }
-        }
 
 
 private class InsertAction implements ActionListener {
